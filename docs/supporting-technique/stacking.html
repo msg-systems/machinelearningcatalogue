@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Stacking - msg Machine Learning Catalogue</title>
+    <meta name="description" content="A catalogue of machine learning methods and use cases.">
+    <meta name="author" content="msg Research <https://msg.group>">
+    
+    <meta property="og:locale" content="en_US" />
+    
+    <meta property="og:type" content="website" />
+    
+    <meta property="og:title" content="msg.Machine Learning Catalogue" />
+    
+    <meta property="og:description" content="A catalogue of machine learning methods and use cases." />
+    
+    <meta property="og:url" content="https://machinelearningcatalogue.com" />
+    
+    <meta property="og:site_name" content="Machine Learning Catalogue" />
+    
+    <meta property="og:image" content="https://machinelearningcatalogue.com/images/screenshot.jpg" />
+    
+    
+    <meta property="twitter:card" content="summary" />
+    
+    <meta property="twitter:site" content="@msg_group" />
+    
+    <meta property="twitter:creator" content="@marklubkowitz" />
+    
+    <base href="/">
+    <link rel="canonical" href="https://machinelearningcatalogue.com//supporting-technique/stacking.html" />
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#80173b">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#80173b">
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["setCookieDomain", "*.machinelearningcatalogue.com"]);
+        _paq.push(["setDoNotTrack", true]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="https://analytics.msg.systems/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '8']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand flex-column flex-md-row navbar-light">
+    
+    <a class="navbar-brand" href="https://machinelearningcatalogue.com/">
+        <img src="/images/logo_msg_RGB.svg" alt="msg Machine Learning Catalogue" class="d-inline-block mr-0 mr-md-2">
+    </a>
+    
+    <button class="navbar-toggler btn-lg border-0" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="justify-content-end collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://machinelearningcatalogue.com/about.html" title="Machine Learning Catalogue">Machine Learning Catalogue</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://machinelearningcatalogue.com/about.html" title="Meta Model">Meta Model</a>
+            </li>
+            
+            
+        </ul>
+    </div>
+</nav>
+
+    <div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-3 sidebar">
+            <div class="d-flex align-items-center py-4">
+    <input id="search-box" class="form-control my-2 my-sm-0" type="search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Search &hellip;" data-animation="true" autocomplete="off" size="auto">
+    <button class="btn btn-link btn-category-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse" data-target="#category-navigation" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div id="search-results-dropdown" class="dropdown-menu" aria-labelledby="search-results-dropdown">
+        <div id="search-results" class="list-group list-group-flush">
+            <p class="list-group-item text-muted contextual-help">Use *, + and - to modify the search parameters.</p>
+        </div>
+    </div>
+</div>
+<nav id="category-navigation" class="side-navigation collapse pb-4">
+    
+        
+
+
+<div class="category-nav">
+    <div class="d-flex flex-row justify-content-between align-self-start mt-2">
+        <h6 class="group-collapser collapsed" data-toggle="collapse" data-target="#list-algorithm" aria-expanded="false" aria-controls="algorithm">Algorithms</h6>
+    </div>
+    <ul class="nav flex-column collapse  mb-4" id="list-algorithm">
+        
+        <li>
+            <a href="/algorithm/actor-critic.html" class="">Actor-critic</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/adaptive-resonance-theory-network.html" class="">Adaptive Resonance Theory Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/association-rule-learning.html" class="">Association Rule Learning</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/autoencoder.html" class="">Autoencoder</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/averaged-one-dependence-estimators.html" class="">Averaged One-dependence Estimators</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/bayesian-linear-regression.html" class="">Bayesian Linear Regression</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/bayesian-network.html" class="">Bayesian Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/convolutional-neural-network.html" class="">Convolutional Neural Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/dbscan.html" class="">DBSCAN</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/decision-tree.html" class="">Decision Tree</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/deep-q-network.html" class="">Deep Q-network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/diffusion.html" class="">Diffusion Model</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/discriminant-analysis.html" class="">Discriminant Analysis</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/encoder-decoder.html" class="">Encoder-Decoder</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/generative-adversarial-network.html" class="">Generative Adversarial Networks</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/genetic-algorithm.html" class="">Genetic Algorithm</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/gpt.html" class="">Generative Pretrained Transformer</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/gradient%20boosting.html" class="">Gradient Boosting</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/gradient-descent.html" class="">Gradient Descent</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/graph-neural-network.html" class="">Graph Neural Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/hierarchical-clustering.html" class="">Hierarchical Clustering</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/hopfield-network.html" class="">Hopfield Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/k-means.html" class="">K-means</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/k-medians.html" class="">K-medians</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/k-medoids.html" class="">K-medoids</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/learning-vector-quantization.html" class="">Learning Vector Quantization</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/least-squares-regression.html" class="">Least Squares Regression</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/llm.html" class="">Large Language Model</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/local-outlier-factor.html" class="">Local Outlier Factor</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/local-regression.html" class="">Local Regression</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/logistic-regression.html" class="">Logistic Regression</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/long-short-term-memory-network.html" class="">Long Short-term Memory Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/markov-random-field.html" class="">Markov Random Field</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/monte-carlo-tree-search.html" class="">Monte Carlo Tree Search</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/multivariate-adaptive-regression-splines.html" class="">Multivariate Adaptive Regression Splines</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/naive-bayesian-classifier.html" class="">Naive Bayesian Classifier</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/nearest-neighbour.html" class="">Nearest Neighbour</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/neural-network.html" class="">Neural Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/one-rule.html" class="">One Rule</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/perceptron.html" class="">Perceptron</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/policy-gradient-estimation.html" class="">Policy Gradient Estimation</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/q-learning.html" class="">Q-learning</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/radial-basis-function-network.html" class="">Radial Basis Function Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/random-forest.html" class="">Random Forest</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/recurrent-nn.html" class="">Recurrent Neural Network</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/restricted-boltzmann-machine.html" class="">Restricted Boltzmann Machine</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/sarsa.html" class="">Sarsa</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/spherical-k-means.html" class="">Spherical K-means</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/stepwise-regression.html" class="">Stepwise Regression</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/support-vector-machine.html" class="">Support Vector Machine</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/temporal-difference-learning.html" class="">Temporal Difference Learning</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/transformer.html" class="">Transformer</a>
+        </li>
+        
+        <li>
+            <a href="/algorithm/zero-rule.html" class="">Zero Rule</a>
+        </li>
+        
+    </ul>
+</div>
+    
+        
+
+
+<div class="category-nav">
+    <div class="d-flex flex-row justify-content-between align-self-start mt-2">
+        <h6 class="group-collapser collapsed" data-toggle="collapse" data-target="#list-use_case" aria-expanded="false" aria-controls="use_case">Use Cases</h6>
+    </div>
+    <ul class="nav flex-column collapse  mb-4" id="list-use_case">
+        
+        <li>
+            <a href="/use_case/anomaly-detection.html" class="">Anomaly Detection</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/audio-generation.html" class="">Audio Generation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/automated-planning.html" class="">Automated Planning</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/autonomous-agent.html" class="">Autonomous Agent</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/classification.html" class="">Classification</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/code-generation.html" class="">Code Generation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/collaborative-recommendation.html" class="">Collaborative Recommendation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/competition-planning.html" class="">Competition Planning</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/content-based-recommendation.html" class="">Content-based Recommendation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/data-mining.html" class="">Data Mining</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/explainable-ai.html" class="">Explainable AI</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/facial-recognition.html" class="">Facial Recognition</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/gesture-recognition.html" class="">Gesture Recognition</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/graph-creation.html" class="">Graph Creation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/image-description.html" class="">Image Description and Analysis</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/image-generation.html" class="">Image Generation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/information-extraction.html" class="">Information Extraction</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/information-filtering.html" class="">Information Filtering</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/knowledge-representation.html" class="">Knowledge Representation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/nonlinear-control.html" class="">Non-linear Control</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/object-recognition.html" class="">Object Recognition and Tracking</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/optical-character-recognition.html" class="">Optical Character Recognition</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/question-answering.html" class="">Question Answering</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/regression.html" class="">Regression</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/robotic-process-automation.html" class="">Robotic Process Automation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/semantic-search.html" class="">Semantic Search</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/sentiment-analysis.html" class="">Sentiment Analysis</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/speech-recognition.html" class="">Speech Recognition</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/strategic-planning.html" class="">Strategic Planning</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/synthetic-data-generation.html" class="">Synthetic Data Generation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/text-completion-and-generation.html" class="">Text Completion and Generation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/text-summarization.html" class="">Text Summarization</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/translation.html" class="">Translation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/video-generation.html" class="">Video Generation</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/virtual-assistance.html" class="">Virtual Assistance</a>
+        </li>
+        
+        <li>
+            <a href="/use_case/voice-control.html" class="">Voice Control</a>
+        </li>
+        
+    </ul>
+</div>
+    
+        
+
+
+<div class="category-nav">
+    <div class="d-flex flex-row justify-content-between align-self-start mt-2">
+        <h6 class="group-collapser " data-toggle="collapse" data-target="#list-supporting-technique" aria-expanded="true" aria-controls="supporting-technique">Supporting Techniques</h6>
+    </div>
+    <ul class="nav flex-column collapse show mb-4" id="list-supporting-technique">
+        
+        <li>
+            <a href="/supporting-technique/Attention.html" class="">Attention</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/Cross-validation.html" class="">Cross-validation</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/Normalization.html" class="">Data Normalization</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/bagging.html" class="">Bagging</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/binary-decomposition.html" class="">Binary Decomposition</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/boosting.html" class="">Boosting</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/data-balancing.html" class="">Data Balancing</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/dimensionality-reduction.html" class="">Dimensionality Reduction</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/elastic-net.html" class="">Elastic Net</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/ensemble.html" class="">Ensemble Learning</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/evolutionary-selection.html" class="">Evolutionary Selection</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/expectation-maximization.html" class="">Expectation Maximization</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/factor-analysis.html" class="">Factor Analysis</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/feature-selection.html" class="">Feature Selection</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/hyperparameter-tuning.html" class="">Hyperparameter Tuning</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/lasso.html" class="">LASSO</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/latent-semantic-indexing.html" class="">Latent Semantic Indexing</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/multidimensional-scaling.html" class="">Multidimensional Scaling</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/principal-component-analysis.html" class="">Principal Component Analysis</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/probabilistic-latent-semantic-indexing.html" class="">Probabilistic Latent Semantic Indexing</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/projection-pursuit.html" class="">Projection Pursuit</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/prompt-engineering.html" class="">Prompt Engineering</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/quantization.html" class="">Quantization</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/ridge-regression.html" class="">Ridge regression</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/stacking.html" class="current">Stacking</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/t-sne.html" class="">t-SNE</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/tokenization.html" class="">Tokenization</a>
+        </li>
+        
+        <li>
+            <a href="/supporting-technique/voting.html" class="">Voting</a>
+        </li>
+        
+    </ul>
+</div>
+    
+        
+
+
+<div class="category-nav">
+    <div class="d-flex flex-row justify-content-between align-self-start mt-2">
+        <h6 class="group-collapser collapsed" data-toggle="collapse" data-target="#list-data_type" aria-expanded="false" aria-controls="data_type">Data Types</h6>
+    </div>
+    <ul class="nav flex-column collapse  mb-4" id="list-data_type">
+        
+        <li>
+            <a href="/data_type/binary-vector.html" class="">Binary Vector</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/embedding.html" class="">Embedding</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/graphs.html" class="">Graph</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/image.html" class="">Image</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/nominal-variable.html" class="">Nominal Variable</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/ordinal-variable.html" class="">Ordinal Variable</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/probability.html" class="">Probability</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/quantitative-variable.html" class="">Quantitative Variables</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/sequences.html" class="">Sequences</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/sound.html" class="">Sound</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/speech.html" class="">Speech</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/text.html" class="">Text</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/timeseries.html" class="">Time Series</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/vector-of-categorical-variables.html" class="">Vector of Categorical Variables</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/vector-of-quantitative-variables.html" class="">Vector of Quantitative Variables</a>
+        </li>
+        
+        <li>
+            <a href="/data_type/video.html" class="">Video</a>
+        </li>
+        
+    </ul>
+</div>
+    
+        
+
+
+<div class="category-nav">
+    <div class="d-flex flex-row justify-content-between align-self-start mt-2">
+        <h6 class="group-collapser collapsed" data-toggle="collapse" data-target="#list-learning_style" aria-expanded="false" aria-controls="learning_style">Learning Styles</h6>
+    </div>
+    <ul class="nav flex-column collapse  mb-4" id="list-learning_style">
+        
+        <li>
+            <a href="/learning_style/active.html" class="">Active Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/adversarial.html" class="">Adversarial Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/distillation.html" class="">Distillation</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/few-shot.html" class="">Few-Shot Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/finetuning.html" class="">Finetuning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/lazy%20learning.html" class="">Lazy Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/online.html" class="">Online Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/reinforcement.html" class="">Reinforcement Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/self-supervised.html" class="">Self-supervised Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/semi-supervised.html" class="">Semi-supervised Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/supervised.html" class="">Supervised Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/transfer.html" class="">Transfer Learning</a>
+        </li>
+        
+        <li>
+            <a href="/learning_style/unsupervised.html" class="">Unsupervised Learning</a>
+        </li>
+        
+    </ul>
+</div>
+    
+        
+
+
+<div class="category-nav">
+    <div class="d-flex flex-row justify-content-between align-self-start mt-2">
+        <h6 class="group-collapser collapsed" data-toggle="collapse" data-target="#list-miscellaneous" aria-expanded="false" aria-controls="miscellaneous">Miscellaneous</h6>
+    </div>
+    <ul class="nav flex-column collapse  mb-4" id="list-miscellaneous">
+        
+        <li>
+            <a href="/miscellaneous/adversarial-attack.html" class="">Adversarial Attack</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/agi.html" class="">Artificial General Intelligence</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/ai-agents.html" class="">AI Agents</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/alignment.html" class="">Alignment</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/backpropagation.html" class="">Backpropagation</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/behavioural-modelling.html" class="">Behavioural modelling</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/benchmark.html" class="">Benchmark</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/classification.html" class="">Classification</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/clustering.html" class="">Clustering</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/data-leakage.html" class="">Data Leakage</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/data-poisoning.html" class="">Data Poisoning</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/drift.html" class="">Model and Data Drift</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/evaluation-criteria.html" class="">Evaluation Criteria</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/feature-discovery.html" class="">Feature Discovery</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/function.html" class="">Function</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/guardrails.html" class="">Guardrails</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/human-baseline.html" class="">Human-level Performance</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/markov-decision-process.html" class="">Markov Decision Process</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/multimodality.html" class="">Multimodality</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/nonparametric.html" class="">Non-parametric Algorithm</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/overfitting.html" class="">Overfitting</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/parametric.html" class="">Parametric Algorithm</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/prediction-probability.html" class="">Prediction Probability</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/probability.html" class="">Probability</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/rag.html" class="">Retrieval Augmented Generation</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/reasoning.html" class="">Reasoning</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/regression.html" class="">Regression</a>
+        </li>
+        
+        <li>
+            <a href="/miscellaneous/rule.html" class="">Rule</a>
+        </li>
+        
+    </ul>
+</div>
+    
+</nav>
+        </div>
+        <div class="col-12 col-md-9 col-xl-9 py-md-3 px-md-5 content" role="main">
+            <div class="header hyphenate">
+                <h1 class="weight-3">Stacking</h1>
+                
+                <p class="lead">Supporting Technique</p>
+            </div>
+            <div class="content">
+                <div class="pb-4"><p><strong>Stacking is an ensemble learning technique that combines multiple models to improve predictive performance. In contrast to other ensemble methods, stacking performs the predictions of the models after each other.</strong></p>
+
+<p>Stacking is used in scenarios where leveraging the strengths of different models can lead to better accuracy and robustness, such as in classification and regression tasks.
+It is particularly useful when individual models have complementary strengths and weaknesses.</p>
+
+<p>Stacking works by training a set of first-level models on the same dataset and then using their outputs as inputs for a second-level model, which makes the final prediction.
+The first-level models can be of the same type with different hyperparameters or completely different models.
+The second-level model, often a simple linear or logistic regression, learns to combine the outputs of the first-level models to produce a more accurate prediction.</p>
+
+<p>For example, in a classification task, the first-level models might include a decision tree, a neural network, and a support vector machine.
+Their outputs are then fed into a logistic regression model, which makes the final prediction based on the combined information.</p>
+
+<p><a href="http://www.cs.waikato.ac.nz/~ihw/papers/97KMT-IHW-Stacked.pdf"><em>Research</em></a> has suggested that linear regression for value prediction or logistic regression for classification are the best choices for the second-level model.</p>
+
+<p>Note that most Neural Networks can be regarded as an extrapolation of the stacking paradigm where each neuron is equivalent to a model and the number of layers is increased from two.</p>
+</div>
+                <dl class="row attributes px-md-4">
+                
+                
+                    
+                    
+                    
+                        <dt class="col-md-4 p-md-3 mt-xs-3 mt-md-0">Alias</dt>
+                        <dd class="col-md-8 p-md-3 mb-xs-3 mb-md-0">
+                        
+                            
+                                    <span class="hyphenate text-left badge badge-light">Stacked Generalization</span>
+                                
+                        
+                        </dd>
+                
+                    
+                    
+                    
+                        <dt class="col-md-4 p-md-3 mt-xs-3 mt-md-0">Related terms</dt>
+                        <dd class="col-md-8 p-md-3 mb-xs-3 mb-md-0">
+                        
+                            
+                                    <span class="hyphenate text-left badge badge-light">Bagging</span>
+                                
+                        
+                            
+                                    <span class="hyphenate text-left badge badge-light">Boosting</span>
+                                
+                        
+                            
+                                    <span class="hyphenate text-left badge badge-light">Voting</span>
+                                
+                        
+                            
+                                    <span class="hyphenate text-left badge badge-light">Ensemble</span>
+                                
+                        
+                        </dd>
+                
+                </dl>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <footer class="colophon">
+        <div class="container">
+            <div><p><a class="btn btn-outline-light" href="https://www.msg.group/en/privacy">Privacy msg</a> <a class="btn btn-outline-light" href="https://help.github.com/en/articles/github-privacy-statement">Privacy Github</a> <a class="btn btn-outline-light" href="https://www.msg.group/en/imprint">Imprint</a></p><p>Curated, designed, built, and maintained by <a href="https://www.msg.group/en/services/architecture-methodology">msg systems ag - msg Research</a>.<br>Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p></div>
+            <div>
+            
+            
+                <a class="btn btn-dark btn-network" role="button" href="https://www.msg.group/en/services/architecture-methodology" title="msg"><i class="fa fa-fw fa-server" aria-hidden="true"></i> <span class="social-label">msg</span></a>
+            
+            
+            
+                <a class="btn btn-dark btn-network" role="button" href="https://www.linkedin.com/company/msggroup/" title="Linkedin"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i> <span class="social-label">Linkedin</span></a>
+            
+            
+            
+                <a class="btn btn-dark btn-network" role="button" href="http://twitter.com/msg_group" title="Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i> <span class="social-label">Twitter</span></a>
+            
+            
+            
+                <a class="btn btn-dark btn-network" role="button" href="https://www.facebook.com/msgsystems/" title="Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i> <span class="social-label">Facebook</span></a>
+            
+            
+            
+                <a class="btn btn-dark btn-network" role="button" href="https://github.com/msg-systems/" title="Github"><i class="fa fa-fw fa-github" aria-hidden="true"></i> <span class="social-label">Github</span></a>
+            
+            
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/lunr.js"></script>
+    <script src="/js/search.js"></script>
+
+        <a id="scrollToTop" class="scrollToTop btn btn-primary" title="scroll to top" href="#">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+        <span class="sr-only">(scroll to top)</span>
+    </a>
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#scrollToTop").click(function() {
+                $("html, body").animate({ scrollTop: 0 }, 400);
+                return false;
+            });
+            $(window).scroll(function(){
+                if ($(document).scrollTop() > 64) {
+                    $('body').addClass('scrolled');
+                } else {
+                    $('body').removeClass('scrolled');
+                }
+            });
+        });
+    </script>
+    
+    <script type="text/javascript">   $(function () {
+       var popovers = [{
+           selector: "#MLS",
+           title: "Machine Learning Solution",
+           content: "A machine learning solution is a domain specific implementation for one or more specific use cases using machine learning algorithms and techniques.",
+           placement: "bottom"
+       }, {
+           selector: "#FBB",
+           title: "Functional Building Block",
+           content: "A functional building block describes the function an algorithm or a supporting technique fulfills.",
+           placement: "bottom"
+       }, {
+           selector: "#ALG",
+           title: "Algorithm",
+           content: "A machine learning algorithm describes a procedure to train a machine learning model based on training or input data. It also describes the procedure within this model while the model is evaluated at runtime.",
+           placement: "left"
+       }, {
+           selector: "#SPT",
+           title: "Supporting Technique",
+           content: "Supporting techniques are procedures that can each be used to modulate the behavior of a variety of algorithms. Typically they optimize the quality or the performance of algorithms.",
+           placement: "right"
+       }, {
+           selector: "#GUC",
+           title: "(Generic) Use Case",
+           content: "A generic use case describes a domain unspecific application of machine learning functionality to common business problem.",
+           placement: "left"
+       }, {
+           selector: "#LST",
+           title: "Learning Style",
+           content: "A learning style describes how an algorithm or a supporting technique is trained to create a machine learning model.",
+           placement: "bottom"
+       }, {
+           selector: "#ODT",
+           title: "Output Data Type",
+           content: "An output data type describes the data structure of the data an algorithm would return to a program that has called it.",
+           placement: "left"
+       }, {
+           selector: "#INM",
+           title: "Internal Model",
+           content: "The internal model is the structure that an algorithm uses for its calculations.",
+           placement: "right"
+       }, {
+           selector: "#IDT",
+           title: "Input Data Type",
+           content: "An input data type describes the data structure and in some cases also the data types that the algorithm would be fed by a program using it.",
+           placement: "left"
+       }, {
+           selector: "#REL",
+           title: "Relevance",
+           content: "The relevance describes whether an algorithm or a supporting technique is still used for new machine learning solutions.",
+           placement: "top"
+       }, {
+           selector: "#PAR",
+           title: "Parametricity",
+           content: "The parametricity describes to what extent the user specifies the model to the algorithm and to what extent the algorithm learns the model itself.",
+           placement: "bottom"
+       }];
+
+       popovers.forEach(function (popover) {
+           $(popover.selector).attr({
+               'data-toggle': 'popover',
+               'title': popover.title,
+               'data-content': popover.content,
+               'data-placement': popover.placement
+           });
+       })
+
+       $('[data-toggle="popover"]').popover({
+           container: 'body',
+           trigger: 'hover', // focus
+           delay: {
+               "show": 200,
+               "hide": 100
+           }
+       })
+       $(function () {
+           $('[data-toggle="tooltip"]').tooltip()
+       })
+   })</script>
+</body>
+
+</html>
