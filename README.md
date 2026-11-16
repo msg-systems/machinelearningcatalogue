@@ -22,3 +22,9 @@ A poster of the generic use cases is available as [PDF](docs/downloads/msg_Machi
 ## Repository
 
 This repository hosts the published website. All pages live in [`docs/`](docs/) and are served via GitHub Pages under [machinelearningcatalogue.com](https://machinelearningcatalogue.com). Please feel free to open a GitHub issue for corrections or suggestions.
+
+## License
+
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons BY 4.0 International License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
+The content of the **Machine Learning Catalogue** is copyrighted by msg systems ag and distributed under a [Creative Commons BY 4.0 International License](https://creativecommons.org/licenses/by/4.0/). You may share and adapt it, with a source credited to [https://machinelearningcatalogue.com](https://machinelearningcatalogue.com).
